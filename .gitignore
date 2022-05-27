@@ -1,0 +1,17 @@
+node_modules
+.idea
+.DS_Store
+*.logs
+.env
+dist
+keys/*
+tsconfig2.json
+k8t/*
+argocd-install.yaml
+docs
+src/**/*.js
+.nyc_output
+coverage
+.prettierrc.js
+nodemon.json
+.vscode

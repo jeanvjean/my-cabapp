@@ -22,7 +22,6 @@ class Mongo {
 	static options: ConnectionOptions = {
 	  socketTimeoutMS: 0,
 	  keepAlive: true,
-	  reconnectTries: 20,
 	  poolSize: `${process.env.NODE_ENV}` !== 'development' ? 5 : 1,
 	  useNewUrlParser: true,
 	  useCreateIndex: true,

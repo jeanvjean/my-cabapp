@@ -5,7 +5,7 @@ import {join} from 'path';
 import {json, urlencoded} from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as express from 'express';
-import * as logger from 'morgan';
+import * as morgan from 'morgan';
 import * as helmet from 'helmet';
 import * as cors from 'cors';
 import * as compression from 'compression';
@@ -14,7 +14,18 @@ import AppConfig from './configs/app';
 import {ctrl} from './controllers';
 import router from './routes';
 const fileUpload = require('express-fileupload');
+import logger from '@src/utils/logger';
 
+switch (process.env.NODE_ENV) {
+case 'development': logger('production');
+  break;
+case 'production': logger('production');
+  break;
+case 'test': logger('test');
+  break;
+default: logger('development');
+  break;
+}
 /**
  * Express application
  */
@@ -40,7 +51,7 @@ class Application {
 	 * Configure express application
 	 */
 	private configure(): void {
-	  this.express.use(logger('dev'));
+	  this.express.use(morgan('dev'));
 	  this.express.use(json({limit: AppConfig.clientBodyLimit}));
 	  this.express.use(urlencoded({extended: true}));
 	  this.express.use(cookieParser());

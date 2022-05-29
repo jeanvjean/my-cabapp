@@ -36,6 +36,7 @@
         "@types/nodemailer-smtp-transport": "^2.7.5",
         "@types/passport": "^1.0.3",
         "@types/request-promise": "^4.1.46",
+        "@types/winston": "^2.4.4",
         "bcrypt": "^4.0.1",
         "bluebird": "^3.7.2",
         "body-parser": "^1.19.0",
@@ -70,7 +71,9 @@
         "passport-slack": "0.0.7",
         "request": "^2.88.2",
         "request-promise": "^4.2.5",
-        "tsconfig-paths": "^3.9.0"
+        "tsconfig-paths": "^3.9.0",
+        "winston": "^3.7.2",
+        "winston-papertrail": "^1.0.5"
     },
     "devDependencies": {
         "@types/bcrypt": "^3.0.0",

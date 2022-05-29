@@ -5,6 +5,7 @@
 /* eslint-disable no-undef */
 // @ts-ignore
 import 'mocha';
+import * as mongoose from 'mongoose';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 import 'dotenv/config';
@@ -13,6 +14,16 @@ import {user1, user2} from '../payload';
 const app = new Application().express;
 chai.use(chaiHttp);
 const {expect} = chai;
+
+describe('Database', ()=>{
+  before(function(done) {
+    mongoose.connect(`${process.env.TEST_DATABASE_URL}`, () => {
+      mongoose.connection.db.dropDatabase(function() {
+        done();
+      });
+    });
+  });
+});
 
 describe('Cab app Tests', ()=>{
   describe('register cab', ()=>{
@@ -35,7 +46,7 @@ describe('Cab app Tests', ()=>{
           expect(res.body).to.have.property('message');
           expect(res.body.message).to.equal('Driver saved successfully');
           expect(res.statusCode).to.equal(200);
-          process.env.USER1_EMAIL = res.body.data.email;
+          process.env.USER1_EMAIL = res.body.data.driver.email;
           done();
         });
     });
@@ -56,6 +67,7 @@ describe('Cab app Tests', ()=>{
       chai.request(app)
         .get(`/api/driver/verify?email=${process.env.USER1_EMAIL}`)
         .end((err: any, res: any)=>{
+          console.log(process.env.USER1_EMAIL, '<====>2');
           expect(res.body).to.have.property('message');
           expect(res.body.message).to.equal('account verified');
           expect(res.statusCode).to.equal(200);

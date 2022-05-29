@@ -81,7 +81,6 @@ export default class DriverModule extends Module {
         const query = {
           $or: [{email: payload}, {carNumber: payload}, {licenseNumber: payload}, {phoneNumber: payload}]
         };
-        console.log(query);
         const data = await this.driver.findOne(query);
         return data;
       } catch (error) {

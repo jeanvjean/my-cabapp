@@ -73,6 +73,7 @@
         "request-promise": "^4.2.5",
         "tsconfig-paths": "^3.9.0",
         "typescript": "^3.9.2",
+        "ts-node": "^8.10.1",
         "winston": "^3.7.2",
         "winston-papertrail": "^1.0.5"
     },
@@ -109,9 +110,7 @@
         "mocha": "^7.2.0",
         "nodemon": "^2.0.4",
         "nyc": "^15.0.1",
-        "sinon": "^9.0.2",
-        "ts-node": "^8.10.1",
-        "typescript": "^3.9.2"
+        "sinon": "^9.0.2"
     },
     "engines": {
         "node": ">=12.15.0",

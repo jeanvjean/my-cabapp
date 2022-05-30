@@ -1,1 +1,1 @@
-worker: 'npm install typescript && npm start'
+web: npm start

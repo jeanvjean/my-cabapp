@@ -72,6 +72,7 @@
         "request": "^2.88.2",
         "request-promise": "^4.2.5",
         "tsconfig-paths": "^3.9.0",
+        "typescript": "^3.9.2",
         "winston": "^3.7.2",
         "winston-papertrail": "^1.0.5"
     },

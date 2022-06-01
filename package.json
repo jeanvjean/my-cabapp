@@ -69,11 +69,12 @@
         "passport": "^0.4.1",
         "passport-google-plus-token": "^2.1.0",
         "passport-slack": "0.0.7",
+        "pm2": "^5.2.0",
         "request": "^2.88.2",
         "request-promise": "^4.2.5",
+        "ts-node": "^8.10.1",
         "tsconfig-paths": "^3.9.0",
         "typescript": "^3.9.2",
-        "ts-node": "^8.10.1",
         "winston": "^3.7.2",
         "winston-papertrail": "^1.0.5"
     },

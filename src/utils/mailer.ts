@@ -1,8 +1,5 @@
-// /* eslint-disable @typescript-eslint/camelcase */
 // /* eslint-disable @typescript-eslint/explicit-function-return-type */
-// /* eslint-disable @typescript-eslint/no-explicit-any */
-// /* eslint-disable @typescript-eslint/no-unused-vars */
-// /* eslint-disable @typescript-eslint/no-empty-function */
+// /* eslint-disable @typescript-eslint/camelcase */
 // import {commonTemplate} from './templates/common.template';
 // import * as smtpTransport from 'nodemailer-sendgrid-transport';
 // import * as nodemailer from 'nodemailer';
@@ -10,10 +7,10 @@
 
 // const MailService = async (subject: string, messageType: any, data: any, copiedUsers = []) => {
 //   const transporter = nodemailer.createTransport(smtpTransport({
+//     service: `${process.env.MAIL_SERVICE}`,
 //     auth: {
-//       api_user: process.env.MAIL_USER,
-//       api_key: process.env.MAIL_PASSWORD
-//     }
+//       api_key: `${process.env.SENDGRID_API_KEY}`,
+//     },
 //   }));
 //   const msg = {
 //     to: data.email,

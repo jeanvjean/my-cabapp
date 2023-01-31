@@ -14,16 +14,7 @@ export interface QueryInterface {
 	sort?: object;
 	range?: string[] | undefined;
 }
-
-/**
- * Base model class
- * @category Modules
- */
 export abstract class Module {
-  /**
-	 * Handle generic error in modules
-	 * @param {Error} error
-	 */
   handleException(error: Error): void {
     if (error instanceof MongooseError.ValidationError) {
       throw new DatabaseValidationException(error.message, '', error);

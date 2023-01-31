@@ -1,8 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable require-jsdoc */
-/* eslint-disable no-undef */
-/* eslint-disable no-tabs */
-/* eslint-disable no-mixed-spaces-and-tabs */
 import {Request, Response} from 'express';
 import {
   Exception,
@@ -15,20 +10,12 @@ import {
   DatabaseValidationException
 } from '@exceptions/index';
 
-/**
- * @interface
- * @category Controllers
- */
 interface ResponseInterface {
 	code: number;
 	message: string | undefined;
 	data?: object | string;
 }
 
-/**
- * Base controller which would be inherited by other controllers.
- * @category Controllers
- */
 class Ctrl {
 	public HTTP_OK = 200
 	public HTTP_CREATED = 201
@@ -38,12 +25,6 @@ class Ctrl {
 	public HTTP_UNAUTHENTICATED = 401
 	public HTTP_UNAUTHORIZED = 403
 
-	/**
-	 * handle successful response
-	 * @param {Response} res
-	 * @param {string} message
-	 * @param {Object|string} data
-	 */
 	public ok(res: Response, message?: string, data?: object | string): void {
 	  const load: ResponseInterface = {
 	    code: this.HTTP_OK,
@@ -53,13 +34,7 @@ class Ctrl {
 	  res.status(this.HTTP_OK).json(load);
 	}
 
-	/**
-	 * @param {Exception} error
-	 * @param {Request} req
-	 * @param {Response} res
-	 */
 	public handleError(error: Exception, req: Request, res: Response): void {
-	  // set locals, only providing error in development
 	  res.locals.message = error.message;
 	  res.locals.error = req.app.get('env') === 'development' ? error : {};
 
@@ -118,20 +93,10 @@ class Ctrl {
 	  res.status(errorCode).json(response);
 	}
 
-	/**
-	 * Handler non existent routes
-	 * @param {Request} req
-	 * @param {Response} res
-	 */
 	public handleNotFound(req: Request, res: Response): void {
 	  res.status(404).send('Resource not found.');
 	}
 
-	/**
-	 * Standardize response format
-	 * @param {ResponseInterface} resp
-	 * @return {ResponseInterface}
-	 */
 	protected format(resp: ResponseInterface): ResponseInterface {
 	  return resp;
 	}

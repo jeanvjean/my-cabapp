@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable no-tabs */
-/* eslint-disable no-mixed-spaces-and-tabs */
 import {join} from 'path';
 import {json, urlencoded} from 'body-parser';
 import * as cookieParser from 'cookie-parser';

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import {notification} from '@src/rpc/config';
 
 const path = require('path');

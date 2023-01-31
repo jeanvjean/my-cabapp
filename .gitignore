@@ -15,3 +15,4 @@ coverage
 .prettierrc.js
 nodemon.json
 .vscode
+package-lock.json

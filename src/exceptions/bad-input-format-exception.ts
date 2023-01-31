@@ -1,5 +1,3 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
-/* eslint-disable no-tabs */
 import {BadInputFormatExceptionCode} from './codes';
 import Exception from './exception';
 
@@ -7,19 +5,10 @@ interface InputError {
 	mapped?: Function;
 }
 
-/**
- * Handles invalid and bad input exceptions
- * @category Exceptions
- */
 class BadInputFormatException extends Exception {
 	public meta: object | undefined
 	public errors: InputError[] | undefined
 
-	/**
-	 * @constructor
-	 * @param {string} message
-	 * @param {InputError} errors
-	 */
 	public constructor(message?: string, errors?: InputError[]) {
 	  super(message);
 	  Object.setPrototypeOf(this, new.target.prototype);

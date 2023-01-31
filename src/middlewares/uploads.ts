@@ -5,7 +5,6 @@ import Ctrl from '@controllers/ctrl';
 import {mkdirSync, existsSync, unlinkSync} from 'fs-extra';
 import {
   BadInputFormatException,
-  InvalidAccessCredentialsException
 } from '@exceptions/index';
 import Uploader from '../utils/uploader';
 

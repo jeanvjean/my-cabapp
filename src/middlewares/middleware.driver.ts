@@ -1,9 +1,5 @@
-/* eslint-disable @typescript-eslint/camelcase */
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable @typescript-eslint/ban-ts-ignore */
-/* eslint-disable require-jsdoc */
 import Ctrl from '@src/controllers/ctrl';
-import {Request, Response, NextFunction, query} from 'express';
+import {Request, Response, NextFunction} from 'express';
 import {RequestHandler} from 'express-serve-static-core';
 import {driver as DriverModule} from '../modules';
 

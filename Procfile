@@ -1,1 +1,1 @@
-worker: pm2 start pm2.json
+worker: npm start

@@ -1,8 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable @typescript-eslint/camelcase */
-/* eslint-disable new-cap */
-/* eslint-disable @typescript-eslint/ban-ts-ignore */
-/* eslint-disable require-jsdoc */
 import {Module} from '../module';
 import {
   DriverInterface,
@@ -14,8 +9,6 @@ import {
   DriverStatus,
 } from '../interfaces';
 import {Model} from 'mongoose';
-// import MailService from '../../utils/mailer';
-import {BadInputFormatException} from '../../exceptions';
 
 export type DriverPropInterface = {
     driver: Model<DriverInterface>;
@@ -43,22 +36,12 @@ export default class DriverModule extends Module {
           if (err) throw new Error(err.message);
           return saved;
         });
-        const emailData = {email, name};
-        console.log(process.env.NODE_ENV);
-
-        if (process.env.NODE_ENV === 'test') {
-          return {
-            driver,
-            status: 'success'
-          };
-        }
-        // await MailService('Verify email', 'verify_email', emailData);
         return {
           driver,
           status: 'success'
         };
       } catch (error) {
-        throw new Error('an error occured');
+        throw new Error('an error occurred');
       }
     }
 

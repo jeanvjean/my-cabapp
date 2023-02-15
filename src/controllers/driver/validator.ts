@@ -1,5 +1,3 @@
-/* eslint-disable require-jsdoc */
-/* eslint-disable no-tabs */
 import {ValidationChain, validationResult, check} from 'express-validator';
 import {RequestHandler, Request, Response, NextFunction} from 'express';
 import Ctrl from '@controllers/ctrl';
@@ -7,9 +5,6 @@ import {BadInputFormatException} from '@exceptions/index';
 
 
 export default class DriverValidator extends Ctrl {
-  /**
-       * @return {ValidationChain[]}
-       */
   validate(): RequestHandler {
     return async (
       req: Request,

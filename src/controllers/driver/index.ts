@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-ignore */
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable require-jsdoc */
 import {Response, Request, RequestHandler, NextFunction} from 'express';
 import Ctrl from '../ctrl';
 import DriverModule from '@src/modules/drivers';
